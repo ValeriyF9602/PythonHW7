@@ -16,3 +16,18 @@
 '''
 
 
+def is_rhythmic(poem: str) -> bool:
+
+    return len(set([len(tuple(filter(lambda voc: voc in vocales, phrase))) for phrase in poem.split()])) == 1
+
+
+
+vocales = {'а', 'о', 'у', 'э', 'ы', 'и', 'е', 'ё', 'ю', 'я'} # множество гласных букв в русском алфавите
+
+if is_rhythmic(input('Введите стих:\n')): # проверяем введённый стих Винни-Пуха на ритмичность
+
+    print('Парам пам-пам')
+
+else:
+
+    print('Пам парам')
